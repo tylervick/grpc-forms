@@ -1,0 +1,5 @@
+{
+  "cSpell.words": ["fastify", "mantine", "stylelint", "typecheck"],
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
+  "editor.formatOnSave": true
+}

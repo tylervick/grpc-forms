@@ -1,0 +1,12 @@
+diff --git a/node_modules/@fastify/vite/types/index.d.ts b/node_modules/@fastify/vite/types/index.d.ts
+index 9760ce0..548b460 100644
+--- a/node_modules/@fastify/vite/types/index.d.ts
++++ b/node_modules/@fastify/vite/types/index.d.ts
+@@ -24,6 +24,7 @@ declare namespace fastifyVite {
+     dev: boolean
+     root: string
+     spa: boolean
++    renderer: object
+   }
+ 
+   export const fastifyVite: FastifyVitePlugin
