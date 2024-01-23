@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package helloworld;
+
+enum GreetingType {
+  UNKNOWN = 0;
+  HELLO = 1;
+  GOODBYE = 2;
+}
+
+message GoodbyeRequest {
+  string name = 1;
+
+  MessageWithAllTypes message_with_all_types = 2;
+}
+
+message GoodbyeResponse {
+  string message = 1;
+}
+
+message MessageWithAllTypes {
+  message NestedMessage {
+    string name = 1;
+  }
+
+  string name = 1;
+  int32 age = 2;
+  float height = 3;
+  double weight = 4;
+  bool married = 5;
+  repeated string friends = 6;
+  NestedMessage nested = 7;
+  map<string, string> properties = 8;
+  GreetingType greeting = 9;
+  oneof test_oneof {
+    string test_oneof_string = 10;
+    int32 test_oneof_int32 = 11;
+  }
+}
