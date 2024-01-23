@@ -1,15 +1,15 @@
+import { ServiceInfo } from '@protobuf-ts/runtime-rpc';
 import { memo } from 'react';
-import { ServiceDescriptorProto } from 'ts-proto-descriptors';
 
 export type ServiceProps = {
-  serviceDesc: ServiceDescriptorProto;
+  serviceInfo: ServiceInfo;
 };
 
-function Service({ serviceDesc }: ServiceProps) {
+function Service({ serviceInfo }: ServiceProps) {
   return (
     <>
       <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
-        {serviceDesc.name}
+        {serviceInfo.typeName}
       </h1>
     </>
   );

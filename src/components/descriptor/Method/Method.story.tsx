@@ -1,4 +1,4 @@
-import { protoMetadata } from '../../../../examples/generated/helloworld';
+import { Greeter } from '../../../../examples/protobuf-ts/helloworld';
 import Method from './Method';
 
 export default {
@@ -6,6 +6,4 @@ export default {
   component: Method,
 };
 
-export const Usage = () => (
-  <Method methodDesc={protoMetadata.fileDescriptor.service[0].method[0]} />
-);
+export const Usage = () => <Method methodInfo={Greeter.methods[0]} />;

@@ -1,7 +1,10 @@
-import { AppProps } from '@/App';
 import { uneval } from 'devalue';
 import { FC } from 'react';
 import { renderToString } from 'react-dom/server';
+
+type AppProps = {
+  url: string | Partial<Location>;
+};
 
 function createRoute(
   {
