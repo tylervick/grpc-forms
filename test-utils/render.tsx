@@ -1,11 +1,12 @@
-import { theme } from '@/theme';
-import { MantineProvider } from '@mantine/core';
+import { ThemeProvider } from '@/components/theme-provider';
 import { render as testingLibraryRender } from '@testing-library/react';
 
 export function render(ui: React.ReactNode) {
   return testingLibraryRender(<>{ui}</>, {
     wrapper: ({ children }: { children: React.ReactNode }) => (
-      <MantineProvider theme={theme}>{children}</MantineProvider>
+      <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+        {children}
+      </ThemeProvider>
     ),
   });
 }

@@ -10,6 +10,11 @@ const root = resolve(dirname(path), 'src');
 export default defineConfig({
   root,
   plugins: [react(), tsconfigPaths()],
+  resolve: {
+    alias: {
+      '@': root,
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

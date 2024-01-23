@@ -1,15 +1,14 @@
-import { MantineProvider, useMantineColorScheme } from '@mantine/core';
-import '@mantine/core/styles.css';
+import '@/globals.css';
 import { addons } from '@storybook/preview-api';
 import React, { useEffect } from 'react';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { theme } from '../src/theme';
+import { ThemeProvider, useTheme } from '../src/components/theme-provider';
 
 const channel = addons.getChannel();
 
-function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
-  const { setColorScheme } = useMantineColorScheme();
-  const handleColorScheme = (value: boolean) => setColorScheme(value ? 'dark' : 'light');
+function Wrapper({ children }: { children: React.ReactNode }) {
+  const { setTheme } = useTheme();
+  const handleColorScheme = (value: boolean) => setTheme(value ? 'dark' : 'light');
 
   useEffect(() => {
     channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);
@@ -20,6 +19,10 @@ function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
 }
 
 export const decorators = [
-  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
-  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,
+  (renderStory: any) => (
+    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+      <Wrapper>{renderStory()}</Wrapper>
+    </ThemeProvider>
+  ),
+  // (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,
 ];

@@ -1,5 +1,6 @@
 {
-  "cSpell.words": ["fastify", "mantine", "stylelint", "typecheck"],
+  "cSpell.words": ["fastify", "mantine", "protoc", "stylelint", "typecheck"],
   "prettier.prettierPath": "./node_modules/prettier/index.cjs",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
 }
