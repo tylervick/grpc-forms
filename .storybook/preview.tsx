@@ -1,8 +1,8 @@
+import { ThemeProvider, useTheme } from '@/components/theme-provider';
 import '@/globals.css';
 import { addons } from '@storybook/preview-api';
 import React, { useEffect } from 'react';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { ThemeProvider, useTheme } from '../src/components/theme-provider';
 import { DocsContainer } from './DocsContainer';
 
 const channel = addons.getChannel();

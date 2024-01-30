@@ -20,9 +20,8 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": ["./src/*"],
-      "@test-utils": ["./test-utils"],
-      "@server/*": ["./server/*"]
+      "@test-utils": ["./test-utils"]
     }
   },
-  "include": ["src", "test-utils", "server", "examples", "index.ts", ".storybook/*.tsx"]
+  "include": ["src", "test-utils", "examples", ".storybook/*.tsx"]
 }
