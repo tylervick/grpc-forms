@@ -22,8 +22,8 @@
     "examples:protoc": "./examples/protoc.sh",
     "example:dev": "tsx examples/grpc-forms-example/index.ts --dev",
     "example:build": "bun run example:build:client && bun run example:build:server",
-    "example:build:client": "vite build --config examples/grpc-forms-example/vite.config.client.ts",
-    "example:build:server": "vite build --config examples/grpc-forms-example/vite.config.server.ts"
+    "example:build:client": "vite build --config examples/grpc-forms-example/vite.config.ts --outDir ../dist/client --ssrManifest",
+    "example:build:server": "vite build --config examples/grpc-forms-example/vite.config.ts --outDir ../dist/server --ssr ../index.ts"
   },
   "trustedDependencies": [
     "grpc-tools",
