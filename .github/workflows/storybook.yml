@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - id: install_bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+    - id: publish_storybook
+      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+      with:
+        install_command: bun install --frozen-lockfile
+        build_command: bun run storybook:build
+        path: storybook-static
