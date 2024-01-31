@@ -13,17 +13,22 @@ export type InputFormProps<M extends object> = {
 const InputForm = memo(function InputForm<M extends object>({ messageType }: InputFormProps<M>) {
   const form = useForm();
 
-  const onSubmit = (values: any) => {
+  const onSubmit = (values: unknown) => {
     console.log(values);
   };
 
   return (
     <>
       <Form {...form}>
+        Request
         <DevTool control={form.control} placement='top-left' />
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <MessageForm messageType={messageType} />
-          <Button type='submit'>Submit</Button>
+          <div className='flex flex-col gap-4'>
+            <MessageForm messageType={messageType} />
+            <Button className='self-end' type='submit'>
+              Submit
+            </Button>
+          </div>
         </form>
       </Form>
     </>

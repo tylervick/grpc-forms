@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/context/theme/ThemeProvider';
 import { memo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { StaticRouter } from 'react-router-dom/server';

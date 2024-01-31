@@ -1,4 +1,5 @@
-import { ThemeProvider, useTheme } from '@/components/theme-provider';
+import { ThemeProvider } from '@/context/theme/ThemeProvider';
+import { useTheme } from '@/context/theme/theme-hook';
 import '@/globals.css';
 import { addons } from '@storybook/preview-api';
 import React, { useEffect } from 'react';

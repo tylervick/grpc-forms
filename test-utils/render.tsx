@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/context/theme/ThemeProvider';
 import { render as testingLibraryRender } from '@testing-library/react';
 
 export function render(ui: React.ReactNode) {
